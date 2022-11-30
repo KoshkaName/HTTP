@@ -8,19 +8,20 @@ public class Cats {
     private String user;
     private int upvotes;
 
-    public Cats (
+    public Cats(
             @JsonProperty("id") String id,
             @JsonProperty("text") String text,
             @JsonProperty("type") String type,
             @JsonProperty("user") String user,
             @JsonProperty("upvotes") int upvotes
-    ){
+    ) {
         this.id = id;
         this.text = text;
         this.type = type;
         this.user = user;
         this.upvotes = upvotes;
     }
+
     public int getUpvotes() {
         return upvotes;
     }

@@ -24,11 +24,12 @@ public class Main {
                 .build();
 
         HttpGet request = new HttpGet(URL);
-        try(CloseableHttpResponse response = httpClient.execute(request)) {
-            List<Cats> responseCats = mapper.readValue(response.getEntity().getContent(), new TypeReference<>() {});
+        try (CloseableHttpResponse response = httpClient.execute(request)) {
+            List<Cats> responseCats = mapper.readValue(response.getEntity().getContent(), new TypeReference<>() {
+            });
 
             responseCats.stream()
-                    .filter(cats -> cats.getUpvotes() !=0)
+                    .filter(cats -> cats.getUpvotes() != 0)
                     .forEach(System.out::println);
         } catch (IOException e) {
             e.printStackTrace();
